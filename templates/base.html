@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 class="logo">LoanApp</h2>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'dashboard' %}">🏠 Home</a></li>
+                    <li><a href="#">💰 Loans</a>
+                        <ul>
+                            <li><a href="{% url 'loan_list' %}">Loan List</a></li>
+                            <li><a href="{% url 'create_loan' %}">Create Loan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">💳 Contributions</a>
+                        <ul>
+                            <li><a href="#">Daily</a></li>
+                            <li><a href="#">Monthly</a></li>
+                            <li><a href="#">Yearly</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'logout' %}">🚪 Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="user-info">
+                    Welcome, <strong>{{ user.username }}</strong>
+                    | <a href="#">Update Profile</a>
+                </div>
+            </header>
+
+            <section class="main-section">
+                {% block content %}{% endblock %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>

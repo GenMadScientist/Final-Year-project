@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yearly Contributions</title>
+  <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h2>📆 Yearly Contributions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% regroup contributions by date.year as year_list %}
+        {% for year in year_list %}
+          <tr>
+            <td>{{ year.grouper }}</td>
+            <td>₦{{ year.list|length }}</td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="2">No yearly contributions found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

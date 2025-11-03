@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Loan List{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/table.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="table-container">
+    <h2>My Loans</h2>
+
+    {% if loans %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Amount (₦)</th>
+                    <th>Interest (%)</th>
+                    <th>Duration (months)</th>
+                    <th>Monthly Payment (₦)</th>
+                    <th>Date Created</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for loan in loans %}
+                <tr>
+                    <td>{{ loan.id }}</td>
+                    <td>{{ loan.loan_amount }}</td>
+                    <td>{{ loan.interest_rate }}</td>
+                    <td>{{ loan.duration_months }}</td>
+                    <td>{{ loan.monthly_payment }}</td>
+                    <td>{{ loan.date_created|date:"M d, Y" }}</td>
+                    <td>
+                        {% if loan.id %}
+                            <a href="{% url 'loan_schedule' loan.id %}" class="action-btn schedule">View Schedule</a>
+                        {% else %}
+                            <span class="disabled-btn">Pending</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>You have no loans yet. <a href="{% url 'create_loan' %}">Create one here</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}

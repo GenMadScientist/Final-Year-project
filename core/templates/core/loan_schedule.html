@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Schedule</title>
+    <link rel="stylesheet" href="{% static 'styles/table.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Amortization Schedule</h2>
+
+        <div class="loan-info">
+            <p><strong>Loan Amount:</strong> ₦{{ loan.loan_amount }}</p>
+            <p><strong>Interest Rate:</strong> {{ loan.interest_rate }}%</p>
+            <p><strong>Duration:</strong> {{ loan.duration_months }} months</p>
+            <p><strong>Monthly Payment:</strong> ₦{{ loan.monthly_payment }}</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Payment (₦)</th>
+                    <th>Principal (₦)</th>
+                    <th>Interest (₦)</th>
+                    <th>Balance (₦)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in schedule %}
+                <tr>
+                    <td data-label="Month">{{ row.month }}</td>
+                    <td data-label="Payment (₦)">{{ row.payment }}</td>
+                    <td data-label="Principal (₦)">{{ row.principal }}</td>
+                    <td data-label="Interest (₦)">{{ row.interest }}</td>
+                    <td data-label="Balance (₦)">{{ row.balance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <a href="{% url 'dashboard' %}" class="btn">← Back to Dashboard</a>
+    </div>
+</body>
+</html>
