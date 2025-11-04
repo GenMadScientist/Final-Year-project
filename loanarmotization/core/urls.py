@@ -4,7 +4,9 @@ from .views import Loans
 
 
 urlpatterns = [
-    path('',Loans.as_view(),name='loan'),
+    path('login/',views.loginPage, name="login"),
+    path('', views.homepage, name="home"),
+    path('loan/',Loans.as_view(),name='loan'),
     path('createloan/',views.createLoan, name='createloan')
 
 ]

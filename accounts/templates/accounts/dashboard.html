@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Loan System</h2>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'dashboard' %}" class="active">🏠 Home</a></li>
+                    <li>
+                        <a href="#">💰 Loans</a>
+                        <ul>
+                            <li><a href="{% url 'loan_list' %}">Loan List</a></li>
+
+                            {% comment %}
+                            Only show Amortization Schedule link if user has a loan.
+                            If not, disable the link to prevent NoReverseMatch errors.
+                            {% endcomment %}
+                            {% if latest_loan %}
+                                <li><a href="{% url 'loan_schedule' latest_loan.id %}">Amortization Schedule</a></li>
+                            {% else %}
+                                <li><span class="disabled">Amortization Schedule</span></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">💵 Contributions</a>
+                        <ul>
+                            <li><a href="{% url 'daily_contributions' %}">Daily</a></li>
+                            <li><a href="{% url 'monthly_contributions' %}">Monthly</a></li>
+                            <li><a href="{% url 'yearly_contributions' %}">Yearly</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'logout' %}">🚪 Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2>Welcome, {{ user.username }} 👋</h2>
+                <a href="{% url 'update_profile' %}" class="profile-link">Update Profile</a>
+            </header>
+
+            <section class="dashboard-content">
+                <div class="card">
+                    <h3>Loans Overview</h3>
+                    <p>Track all your loan applications and payment progress.</p>
+                    <a href="{% url 'loan_list' %}" class="btn">View Loans</a>
+                </div>
+
+                <div class="card">
+                    <h3>Contributions</h3>
+                    <p>See your daily, monthly, and yearly contributions.</p>
+                    <a href="{% url 'monthly_contributions' %}" class="btn">View Contributions</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
