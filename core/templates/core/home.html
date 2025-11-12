@@ -6,22 +6,325 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{% static 'styles/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/output.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/all.css' %}">
     <title>HOME</title>
 </head>
 <body>
 
     <header class="header">
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Contact</a>
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="{% url 'login'%}">Login</a>
+        <nav class="navbar flex justify-between items-center px-20 py-4">
+            <h1 class="text-blue-700 text-2xl font-semibold">Loan Amortization</h1>
+            <div class="space-x-4">
+                <a class="border-b-2 border-blue-700 font-semibold" href="#">Home</a>
+                <a class="font-semibold" href="#">Contact</a>
+                <a class="font-semibold" href="#">Services</a>
+                <a class="font-semibold" href="#">About</a>
+                <a class="font-semibold" href="{% url 'login'%}">Login</a>
+            </div>
         </nav>
     </header>
-    <form action="#" class="search-bar">
+    <!-- <form action="#" class="search-bar">
         <input type="text" placeholder="Search.....">
         <button type="submit"><i class='bx  bx-search'></i> </button>
-    </form>
+    </form> -->
+    <main>
+        <section class="h-[85vh] relative bg-blue-950">
+            <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%] space-y-8">
+                <h1 class="text-white text-6xl">Find The Best <br>Monthly Payment</h1>
+                <h4 class="text-white text-xl">Apply for our business and loans, without monthly painfall</h4>
+                <div class="space-x-4">
+                    <button class="text-white px-5 py-3 bg-lime-500 text-base font-semibold">GET STARTED</button>
+                    <button class="text-white px-5 py-3 bg-blue-800 text-base font-semibold">HOW WE WORK</button>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 w-[85%] mx-auto grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+                <h1 class="font-bold text-3xl">Thousands Of Customers Trust Our Company</h1>
+                <p>
+                    The brochure must grab a viewer’s attention and hold it long enough to deliver the pertinent information. How do you grab your customers’ attention with just a piece
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h2 class="font-semibold text-xl">Our Company</h2>
+                        <p>
+                            You could try by giving the viewer paper cut, but that’s not the kind of attention
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-xl">Our Vision</h2>
+                        <p>
+                            The brochure must grab a viewer’s attention and hold it long enough to
+                        </p>
+                    </div>
+                </div>
+                <button class="text-white px-5 py-3 bg-lime-500 text-base font-semibold">LEARN MORE</button>
+            </div>
+            <div>
+
+            </div>
+        </section>
+        <section class="py-24 bg-gray-100">
+            <div class="space-y-6 mb-14">
+                <h1 class="text-center text-4xl font-bold">Discover all the loans for you</h1>
+                <p class="text-center font-semibold">If you try to cut corners on your brochure you will end up spending more money</p>
+            </div>
+            <div class="grid grid-cols-5">
+                <div class="h-[300px] relative group border-2 overflow-hidden">
+                    <div class="absolute bottom-10 w-full translate-y-[135px] group-hover:translate-y-[0px] transition ease-in-out duration-500">
+                        <h1 class="text-center font-semibold text-2xl"><span class="text-lime-500">01</span> Personal Loan</h1>
+                        <p class="text-center mt-4 mb-6">
+                            But that’s not the kind of attention you want, is it?
+                        </p>
+                        <div class="w-full text-center">
+                            <button class="font-bold text-gray-600 text-center border-b-2 border-lime-500">FIND OUT MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] relative group border-2 overflow-hidden">
+                    <div class="absolute bottom-10 w-full translate-y-[135px] group-hover:translate-y-[0px] transition ease-in-out duration-500">
+                        <h1 class="text-center font-semibold text-2xl"><span class="text-lime-500">02</span> Business Loan</h1>
+                        <p class="text-center mt-4 mb-6">
+                            But that’s not the kind of attention you want, is it?
+                        </p>
+                        <div class="w-full text-center">
+                            <button class="font-bold text-gray-600 text-center border-b-2 border-lime-500">FIND OUT MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] relative group border-2 overflow-hidden">
+                    <div class="absolute bottom-10 w-full translate-y-[135px] group-hover:translate-y-[0px] transition ease-in-out duration-500">
+                        <h1 class="text-center font-semibold text-2xl"><span class="text-lime-500">03</span> Education Loan</h1>
+                        <p class="text-center mt-4 mb-6">
+                            But that’s not the kind of attention you want, is it?
+                        </p>
+                        <div class="w-full text-center">
+                            <button class="font-bold text-gray-600 text-center border-b-2 border-lime-500">FIND OUT MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] relative group border-2 overflow-hidden">
+                    <div class="absolute bottom-10 w-full translate-y-[135px] group-hover:translate-y-[0px] transition ease-in-out duration-500">
+                        <h1 class="text-center font-semibold text-2xl"><span class="text-lime-500">04</span> Commercial Loan</h1>
+                        <p class="text-center mt-4 mb-6">
+                            But that’s not the kind of attention you want, is it?
+                        </p>
+                        <div class="w-full text-center">
+                            <button class="font-bold text-gray-600 text-center border-b-2 border-lime-500">FIND OUT MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] relative group border-2 overflow-hidden">
+                    <div class="absolute bottom-10 w-full translate-y-[135px] group-hover:translate-y-[0px] transition ease-in-out duration-500">
+                        <h1 class="text-center font-semibold text-2xl"><span class="text-lime-500">05</span> Health Loan</h1>
+                        <p class="text-center mt-4 mb-6">
+                            But that’s not the kind of attention you want, is it?
+                        </p>
+                        <div class="w-full text-center">
+                            <button class="font-bold text-gray-600 text-center border-b-2 border-lime-500">FIND OUT MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 w-[75%] mx-auto">
+            <div class="space-y-6 mb-14">
+                <h1 class="text-center text-4xl font-bold">Why People Choose Us</h1>
+                <p class="text-center font-normal">
+                    This question should make the viewer want to open the brochure to learn more.
+                </p>
+            </div>
+            <div class="grid grid-cols-3 gap-x-8 gap-y-16">
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+                <div class="relative shadow-lg px-10 pb-10">
+                    <div class="bg-lime-500 h-[70px] w-[70px] flex justify-center items-center relative left-[50%] translate-x-[-50%] rounded-full translate-y-[-25px]">
+                        <i class="fa fa-thumbs-up text-2xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <h1 class="font-semibold text-2xl text-center">Quick and Easy</h1>
+                        <p class="text-center text-gray-600">
+                            Typography should be relevant and thought out. Type is so strong that it can
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-28 bg-blue-950">
+            <div class="grid grid-cols-2 gap-x-32">
+                <div>
+                    <h1 class="text-5xl text-white font-bold">Request a Call Back</h1>
+                    <p class="text-white mt-4 mb-8">
+                        Posters had been a very beneficial marketing tool because it had paved to deliver an effective message that conveyed customer’s attention.
+                    </p>
+                    <a href="#" class="text-white font-semibold border-b-2 border-lime-500">CONTACT US</a>
+                </div>
+                <div class="space-y-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <input type="text" placeholder="Name" class="text-gray-600 bg-white px-4 py-3 border-[1px]">
+                        <input type="text" placeholder="Name" class="text-gray-600 bg-white px-4 py-3 border-[1px]">
+                        <input type="text" placeholder="Name" class="text-gray-600 bg-white px-4 py-3 border-[1px]">
+                        <input type="text" placeholder="Name" class="text-gray-600 bg-white px-4 py-3 border-[1px]">
+                    </div>
+                    <button class="text-white px-5 py-3 bg-lime-500 text-base font-semibold">SUBMIT</button>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 w-[85%] mx-auto">
+            <div class="space-y-6 mb-24">
+                <h1 class="text-center text-4xl font-bold">Latest Post</h1>
+                <p class="text-center font-normal">
+                    Certainly at that point I was not a potential client for the Strib, but promotional
+                </p>
+            </div>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="border-2 p-6 hover:shadow-xl">
+                    <h1 class="font-semibold text-xl">Get Best Advisers In Your Side</h1>
+                    <p class="text-gray-600 mt-4 mb-6">
+                        The StarTribune doesn’t just hand out the responsibility of informing their community’s citizenry on a daily basis to just any...
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="border-2 h-[50px] w-[50px] flex justify-center items-center rounded-full">
+                            <i class="fa fa-user text-black text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lime-500 font-semibold">May Cain</h2>
+                            <p class="text-gray-600 text-sm">19th March, 2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-2 p-6 hover:shadow-xl">
+                    <h1 class="font-semibold text-xl">Internet Advertising Trends You</h1>
+                    <p class="text-gray-600 mt-4 mb-6">
+                        Nope, I had to interview for this job. And I tell you, I was magnificent, so much so that, as you know, I got the position...
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="border-2 h-[50px] w-[50px] flex justify-center items-center rounded-full">
+                            <i class="fa fa-user text-black text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lime-500 font-semibold">May Cain</h2>
+                            <p class="text-gray-600 text-sm">19th March, 2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-2 p-6 hover:shadow-xl">
+                    <h1 class="font-semibold text-xl">Improve Your Business Cards</h1>
+                    <p class="text-gray-600 mt-4 mb-6">
+                        Upon completion of the interview the gentleman that was to give me my first opportunity at financial freedom...
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="border-2 h-[50px] w-[50px] flex justify-center items-center rounded-full">
+                            <i class="fa fa-user text-black text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lime-500 font-semibold">May Cain</h2>
+                            <p class="text-gray-600 text-sm">19th March, 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-14 text-center">
+                <button class="text-white px-5 py-3 bg-lime-500 text-base font-semibold">VIEW MORE</button>
+            </div>
+        </section>
+        <footer class="py-24 px-24 bg-blue-950">
+            <div class="grid grid-cols-3 gap-12">
+                <div class="space-y-8">
+                    <h1 class="text-white text-2xl font-semibold">Loan Amortizization</h1>
+                    <p class="text-sm text-gray-300">
+                        Please remember though that how far you go is up to you. There is no substitute for your own work and effort in succeeding in this business.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-8">
+                        <h1 class="text-white font-semibold text-2xl">Services</h1>
+                        <ul class="space-y-4">
+                            <li class="text-gray-300">Personal Loans</li>
+                            <li class="text-gray-300">Business Loans</li>
+                            <li class="text-gray-300">Online Cash Loans</li>
+                            <li class="text-gray-300">Cash Advance</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-8">
+                        <h1 class="text-white font-semibold text-2xl">Socials</h1>
+                        <ul class="space-y-4">
+                            <li class="text-gray-300"><i class="fab fa-facebook"></i> Facebook</li>
+                            <li class="text-gray-300"><i class="fab fa-instagram"></i> Instagram</li>
+                            <li class="text-gray-300"><i class="fab fa-twitter"></i> Twitter</li>
+                            <li class="text-gray-300"><i class="fab fa-skype"></i> Skype</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-white font-semibold text-2xl">Socials</h1>
+                    <p class="text-gray-300 mt-4 mb-6">
+                        We work all days a week, Please contact us for any inquiry.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="text-gray-300">Monday - Friday: 11:00 am - 8:00 pm</p>
+                        <p class="text-gray-300">Saturday: 10:00 am - 6:00 pm</p>
+                        <p class="text-gray-300">Sunday: 11:00 am - 6:00 pm</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="{% static 'js/all.js' %}"></script>
 </body>
 </html>
